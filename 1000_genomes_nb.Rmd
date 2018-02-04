@@ -1,30 +1,50 @@
 ---
-title: "R Markdown"
-output: github_document
+title: "1000 Genomes: Exploration and Proposal"
+author: Tung Nguyen
+date: Feb 02, 2018
+always_allow_html: yes
+output:
+  md_document:
+    variant: markdown_github
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-## GitHub Documents
+## 1000 Genomes: Exploration and Proposal Notebook
 
-This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
 
-## Including Code
 
-You can include R code in the document as follows:
+```{r}
 
-```{r cars}
-summary(cars)
+
+#head(result)
+
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
 
-```{r pressure, echo=FALSE}
-plot(pressure)
+## Population effects to mutation frequency of variants - a case of BRCA1
+```{r}
+
+result <- read.csv(gzfile('./output/results-fig2.csv.gz','rt'), header=TRUE, sep=",", stringsAsFactors=FALSE);
+head(result)
+
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+<a href="figures/fig2.html" target="_blank"><img src='figures/fig2.png'> Hello, world!</a>
+
+
+[![Figure](figures/fig2.png)](figures/fig2.html)
+
+
+```{r, echo=FALSE}
+
+library(knitr);
+library(ggplot2);
+include_graphics('figures/fig2.png')
+
+```
+
