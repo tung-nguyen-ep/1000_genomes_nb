@@ -47,7 +47,7 @@ for (j in 1:length(types)){ df[types[j]] = as.numeric(data[,j+1]); }
 xaxis <- list(title="", showgrid=F, zeroline=T, showline=T,
 			  showticklabels=T, tickmode='array', tickvals=c(0:nrow(df)), ticktext=df[,1]);
 yaxis <- list(title="Count", showgrid=T, zeroline=F, showline=F, linewidth=2,
-			  showticklabels=T, autotick=T, ticks='outside');#, range = c(0,2000));
+			  showticklabels=T, autotick=T, ticks='outside', range = c(0,2000));
 
 
 title = "Distribution of annotated variants with their phenotypic functions";
